@@ -1,0 +1,203 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #9370DB;
+
+}
+
+.search-bar {
+  padding: 10px;
+  width: 300px;
+  border-radius: 5px;
+  border: none;
+}
+
+.auth-buttons a, .auth-buttons button {
+  margin-left: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.login-btn {
+  background-color: #9370DB;
+  color: black; /* Purple color to match the logo */
+}
+
+.signup-btn {
+  background-color: rgb(194, 99, 218);
+  color: #ffffff;
+}
+
+.start-selling-btn {
+  background-color: #ff69b4;
+  color: white;
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.nav-item {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.component-grid {
+  margin-bottom: 40px;
+  padding: 0 20px; /* Add padding to the sides */
+}
+
+.section-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center; /* Center the title */
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Change to two columns */
+  gap: 40px; /* Increase gap for more space between cards */
+  padding: 20px 0; /* Add vertical padding */
+}
+
+.component-card {
+  background-color: #2a2a2a;
+  border-radius: 10px;
+  padding: 20px; /* Increase padding for larger cards */
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+.component-card:hover {
+  transform: translateY(-5px);
+}
+
+.component-image {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.component-name {
+  margin: 10px 0;
+}
+
+.component-description {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.component-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.component-price {
+  font-weight: bold;
+  color: #ff69b4;
+  margin-top: 10px;
+}
+
+
+/* login signup and upload page csss */
+
+
+/* Common styles for all forms */
+.login-form, .signup-form, .upload-form {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #2d2d2d;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.login-form h2, .signup-form h2, .upload-form h2 {
+  font-size: 28px;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #fff;
+}
+
+.login-form input, .signup-form input, .upload-form input, .upload-form textarea {
+  width: 100%;
+  font-size: 16px;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background-color: #1a1a1a;
+  color: #fff;
+  box-shadow: 0 0 5px rgba(147, 112, 219, 0.3);
+}
+
+.login-form button[type="submit"], .signup-form button[type="submit"], .upload-form button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  background-color: #8a2be2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-form button[type="submit"]:hover, .signup-form button[type="submit"]:hover, .upload-form button[type="submit"]:hover {
+  background-color: #9932cc;
+}
+
+/* Specific styles for signup form */
+.signup-button {
+  font-size: 16px;
+  padding: 12px;
+  border: 1px solid #8a2be2;
+  background-color: transparent;
+  color: #8a2be2;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.signup-button:hover {
+  background-color: #8a2be2;
+  color: white;
+}
+
+/* Specific styles for upload form */
+.upload-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
