@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import ComponentCard from './ComponentCard';
 import { SimpleGreeting, Counter, Timer, Greeting, TodoList } from './DemoComponents';
-const URL = process.env.REACT_APP_URL ;
+
+const URL = "https://thegrid-production.up.railway.app" ;
 
 const components = [
 
@@ -19,21 +20,34 @@ function ComponentGrid({ title = "React Component Showcase" }) {
   }, []) ;
 
   const fetchComponents = async () => {
-    try {
-      setIsLoading(true) ;
-      const response = await fetch(`${URL}/components`)
-      if(response.ok) {
-        const data = await response.json() ;
-        setComponents(data) ;
-      }else{
-        setError('Failed to fetch components') ;
-      }
-    } catch (error) {
-      setError('Error fetching components: ' + error.message) ;
-    } finally{
-      setIsLoading(false) ;
+  try {
+    setIsLoading(true);
+    const response = await fetch(`${URL}/components`);
+    if (response.ok) {
+      const data = await response.json();
+      // Validate and sanitize the data
+      const validComponents = data.filter(component => 
+        component && typeof component === 'object' && component.id
+      ).map(component => ({
+        ...component,
+        name: component.name || 'Unnamed Component',
+        description: component.description || 'No description',
+        author: component.author || 'Unknown',
+        rating: component.rating || 'N/A',
+        price: component.price || '0.00',
+        // Ensure component.component is a valid React component or a string
+        component: typeof component.component === 'function' ? component.component : null
+      }));
+      setComponents(validComponents);
+    } else {
+      setError('Failed to fetch components');
     }
+  } catch (error) {
+    setError('Error fetching components: ' + error.message);
+  } finally {
+    setIsLoading(false);
   }
+};
 
   if(isLoading) return <div> Loading components...</div>
   if(error) return <div>Error:{error}</div>

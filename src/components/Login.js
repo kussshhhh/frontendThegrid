@@ -1,6 +1,6 @@
 import React, {useState} from 'react' ;
 import {useNavigate, Link} from 'react-router-dom' ;
-const URL = process.env.REACT_APP_URL ;
+const URL = "https://thegrid-production.up.railway.app" ;
 
 
 function Login({onLogin}) {

@@ -1,6 +1,7 @@
 import React, {useState} from 'react' ;
 import {useNavigate} from 'react-router-dom' ;
-const URL = process.env.REACT_APP_URL ;
+
+const URL = "https://thegrid-production.up.railway.app" ;
 
 function Upload({token}) {
     const [name, setName] = useState('') ;
