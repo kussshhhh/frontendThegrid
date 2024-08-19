@@ -11,12 +11,12 @@ function ComponentCard({ component }) {
     <div className='component-card'>
       <div className='component-preview'>
         {component.websiteUrl ? (
-          <iframe
+          < embed
             src={component.websiteUrl}
             title={component.name || 'Component Preview'}
             width="100%"
             height="200"
-            allowFullScreen
+            
           />
         ) : (
           ComponentToRender && typeof ComponentToRender === 'function' ? (

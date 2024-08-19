@@ -39,8 +39,7 @@ function App() {
             <Route path = '/signup' element={<Signup/>} />
             <Route path = '/upload' element = {isLoggedIn ? <Upload token={token}/> : < Navigate to = '/login'/>} />
           </Routes>
-          <Navigation/>
-          <HomePage/>
+          {/* <Navigation/> */}
         </div>
     </Router>
   )
